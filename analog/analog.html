@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analog Signal Plotter</title>
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Analog Signal Plotter</h1>
+    <div>
+        <button id="autoScale">Auto Scale</button>
+        <button id="readAnalog">Read Analog</button>
+        <button id="stopReading" style="display: none;">Stop Reading</button>
+    </div>
+    <canvas id="signalCanvas" width="800" height="400"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

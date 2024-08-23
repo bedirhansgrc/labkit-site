@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TTL Data Viewer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap">
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="uart-viewer" class="tab-content active">
+        <div class="container">
+            <div id="messageListContainer">
+                <h2>Message List</h2>
+                <div class="message-list-header">
+                    <div class="header-number">No</div>
+                    <div class="header-message">Messages</div>
+                </div>
+                <div id="messageList" class="message-box"></div>
+                <div class="button-container full-width">
+                    <button id="importButton" class="half-width import-button">
+                        <i class="fas fa-file-import"></i> Import
+                    </button>
+                    <button id="exportButton" class="half-width export-button">
+                        <i class="fas fa-file-export"></i> Export
+                    </button>
+                    
+                </div>
+                <input type="file" id="importFile" style="display: none;" accept=".json"> <!-- Hidden file input -->
+            </div>
+        </div>
+        <div class="container">
+            <h1>TTL Data Viewer
+                <span id="pairedStatus" style="display: none">Paired</span>
+            </h1>
+            <div class="button-container">
+                <div class="radio-buttons">
+                    <label>
+                        <input type="radio" name="baudRate" value="115200"> 115200
+                    </label>
+                    <label>
+                        <input type="radio" name="baudRate" value="9600"> 9600
+                    </label>
+                </div>
+                <input type="number" id="baudRateInput" placeholder="Enter Baud Rate" />
+                <div class="port-button-container">
+                    <button id="connectButton" title="Connect"><i class="fas fa-plug"></i></button>
+                    <div id="portMessage1" class="port-message"></div>
+                </div>
+                <div class="port-button-container">
+                    <button id="connectButton2" title="Connect Second Port" style="display: none;"><i class="fas fa-plug"></i></button>
+                    <div id="portMessage2" class="port-message"></div>
+                </div>
+                <button id="disconnectButton" title="Disconnect" disabled><i class="fa-solid fa-link-slash"></i></button>
+                <div class="mode-switch">
+                    <label class="switch">
+                        <input type="checkbox" id="modeToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="modeLabel">Normal Mode</span>
+                </div>                
+            </div>
+            <div id="connectedPorts"></div>
+            <select id="portSelect" style="display: none"></select>
+            <h2 class="terminal-header">
+                Terminal
+                <button id="clearButton" class="clear-button"><i class="fas fa-trash-alt"></i></button>
+            </h2>
+            <div id="data" class="message-box"></div>
+            <h2 id="send-message-text">Send Message</h2>
+            <form id="messageForm" class="button-container">
+                <input type="text" id="message" placeholder="Message" required />
+                <button type="submit" class="send-button"><i class="fas fa-paper-plane"></i></button>
+            </form>            
+            <button id="exportTerminalLogsButton" class="export-terminal-logs-button">Export Terminal Logs</button>
+        </div>
+    </div>    
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const scripts = document.getElementsByTagName('script');
+            const links = document.getElementsByTagName('link');
+            const timeStamp = new Date().getTime();
+    
+            for (let i = 0; i < scripts.length; i++) {
+                if (scripts[i].src) {
+                    scripts[i].src = scripts[i].src.split('?')[0] + '?t=' + timeStamp;
+                }
+            }
+    
+            for (let i = 0; i < links.length; i++) {
+                if (links[i].href) {
+                    links[i].href = links[i].href.split('?')[0] + '?t=' + timeStamp;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,610 @@
+body {
+    font-family: 'Roboto Mono', monospace;
+    background: #001e6e;
+    background-size: 400% 400%;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .container {
+    max-width: 800px;
+    width: 100%;
+    background: rgb(18 12 90 / 39%);
+    border: 1px solid #3333332e;
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 1px 4px 10px 3px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+    box-sizing: border-box;
+    color: #fff;
+  }
+  
+  .tab-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+  }
+  
+  h1,
+  h2 {
+    font-family: 'Roboto Mono', monospace;
+    color: #e0e0e0;
+  }
+  
+  h2{
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .half-width {
+    width: 50%;
+  }
+  
+  .radio-buttons {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .radio-buttons label {
+    font-family: 'Roboto Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  button {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0f3460;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+  }
+  
+  button i,
+  button img {
+    margin-right: 0;
+    font-size: 24px;
+  }
+  
+  button:hover {
+    background-color: #0d2c54;
+  }
+  
+  .send-button i {
+    font-size: 24px;
+  }
+  
+  .export-button, .import-button {
+      width: 100%; /* Change to auto to accommodate the text */
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px; 
+  }
+  
+  .export-button i, .import-button i {
+      font-size: 24px;
+      margin-right: 5px; /* Adjust margin to add space between icon and text */
+  }
+  
+  
+  #toggleButton i {
+    font-size: 24px;
+  }
+  
+  .message-box {
+    font-family: 'Roboto Mono', monospace;
+    border: 1px solid #1d2b35;
+    padding: 10px;
+    height: 300px;
+    overflow-y: auto;
+    background-color: #00000057;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  
+  #messageList {
+    height: 450px;
+  }
+  
+  .message-received,
+  .message-sent {
+    padding: 10px;
+    border-radius: 20px;
+    margin: 2px 0;
+    width: fit-content;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: #000;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .message-received-port1,
+  .message-received-port2 {
+    text-align: left;
+    animation: slideIn 0.5s ease-out;
+  }
+  
+  .message-sent {
+    background-color: #b358586b;
+    color: #fff;
+    text-align: right;
+    margin-left: auto;
+    animation: slideOut 0.5s ease-out;
+  }
+  
+  .message-port {
+    font-size: 1em;
+    color: #32173b;
+    font-style: italic;
+    margin-left: 10px;
+  }
+  
+  .message-time {
+    color: #1e1e1e;
+    font-size: 0.8em;
+    margin-left: 10px;
+  }
+  
+  
+  .message-received-port1 .message-time,
+  .message-received-port2 .message-time,
+  .message-received-port1 .message-port,
+  .message-received-port2 .message-port,
+  .message-sent .message-time{
+    display: none;
+  }
+  
+  .message-received-port1:hover .message-time,
+  .message-received-port2:hover .message-time,
+  .message-received-port1:hover .message-port,
+  .message-received-port2:hover .message-port,
+  .message-sent:hover .message-time{
+    display: inline;
+  }
+  
+  
+  #baudRateInput {
+    margin-right: 10px;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 15px;
+    border: 1px solid #9ca4ab36;
+    background-color: #16213e;
+    color: #e0e0e0;
+    height: 30px;
+  }
+  
+  #message {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 1px solid #9ca4ab36;
+    background-color: #16213e;
+    color: #e0e0e0;
+  }
+  
+  input,
+  button[type="submit"] {
+    font-family: 'Roboto Mono', monospace;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #16213e;
+    color: #e0e0e0;
+  }
+  
+  input:focus,
+  button[type="submit"]:focus {
+    outline: none;
+    border-color: #0f3460;
+  }
+  
+  button[type="submit"] {
+    background-color: #0f3460;
+    color: #e0e0e0;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0d2c54;
+  }
+  
+  .message-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #9ca4ab36;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .header-number,
+  .header-message {
+    font-weight: bold;
+    padding: 5px;
+  }
+  
+  .header-number {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #9ca4ab36;
+  }
+  
+  .header-message {
+    flex: 4;
+    text-align: left;
+    padding-left: 10px;
+  }
+  
+  .message-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 5px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  .message-number {
+    flex: 1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .message-text {
+    flex: 4;
+    padding-left: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+    overflow-x: auto;
+  }
+  
+  .pinned-message {
+    background-color: #ffd700;
+    border: 2px solid #ffa500;
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .pin-button,
+  .delete-button,
+  .resend-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pin-button:hover,
+  .delete-button:hover,
+  .resend-button:hover {
+    background-color: #0d2c54;
+  }
+  
+  .pin-button i,
+  .delete-button i,
+  .resend-button i {
+    font-size: 20px;
+  }
+  
+  .delete-button {
+    color: red;
+  }
+  
+  .delete-button:hover {
+    color: darkred;
+  }
+  
+  .resend-button {
+    color: green;
+  }
+  
+  .resend-button:hover {
+    color: darkgreen;
+  }
+  
+  #pairedStatus {
+    color: green;
+    margin-left: 10px;
+  }
+  
+  .clear-button {
+    background-color: #0f3460;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+  
+  .clear-button i {
+    font-size: 24px;
+  }
+  
+  .clear-button:hover {
+    background-color: #0d2c54;
+  }
+  
+  .terminal-header {
+    display: flex;
+    align-items: center;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes slideOut {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  #connectButton, #disconnectButton {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+    margin: 0 5px;
+  }
+  
+  #connectButton {
+    background-color: #4f5daf;
+  }
+  
+  #connectButton:hover {
+    background-color: #394aad;
+  }
+  
+  #disconnectButton {
+    background-color: #ff00007d;
+  }
+  
+  #disconnectButton:hover {
+    background-color: #ab00007d;
+  }
+  
+   #disconnectButton:disabled {
+    background-color: #7f8c8d;
+    cursor: not-allowed;
+  }
+  
+  #connectedPorts {
+    margin-top: 10px;
+  }
+  
+  #connectedPorts div {
+    display: inline-block;
+    background-color: #0f336061;
+    color: #e0e0e0;
+    padding: 5px 10px;
+    margin: 5px 5px;
+    border-radius: 5px;
+  }
+  /* Switch Styles */
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  #modeLabel {
+    font-size: 16px;
+    color: #e0e0e0;
+  }
+  
+  
+  #connectButton2 {
+    background-color: #b358586b;
+  }
+  
+  #connectButton2:hover {
+    background-color: #a93b3b6b;
+  }
+  
+  #connectButton2:disabled {
+    background-color: #b358586b;
+    cursor: not-allowed;
+  }
+  .port-message {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #e0e0e0;
+    text-align: center;
+  }
+  .port-button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #portMessage1, #portMessage2 {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #e0e0e0;
+    text-align: center;
+  }
+  .message-received-port1 {
+    background-color: #4f5daf;
+    padding: 10px;
+    border-radius: 20px;
+    margin: 2px 0;
+    width: fit-content;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: #000;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .message-received-port2 {
+    background-color: #7f51c4; 
+    padding: 10px;
+    border-radius: 20px;
+    margin: 2px 0;
+    width: fit-content;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    color: #000;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  
+  .export-terminal-logs-button {
+    background-color: #0f3460;
+    color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 16px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .export-terminal-logs-button:hover {
+    background-color: #0d2c54;
+  }
+  
+  

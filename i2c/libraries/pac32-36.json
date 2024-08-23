@@ -1,0 +1,47 @@
+{"deviceaddress": 32,
+"fields":
+[
+  {
+    "function": "read",
+    "reg_address": 7,
+    "reg_width" : 16,
+    "description": "Ch1 Voltage 32",
+    "unit": "V",
+    "operation": "x*32 / 65535"
+  },
+  {
+    "function": "read",
+    "reg_address": 8,
+    "reg_width" : 16,
+    "description": "Ch2 Voltage",
+    "reg_count": 1,
+    "unit": "V",
+    "operation": "x*32 / 0xFFFF"
+  },
+    {
+      "function": "write",
+      "reg_address": 28,
+      "description": "Write 28"
+    },
+    {
+      "function": "read",
+      "reg_address": 28,
+      "description": "Read 28-29-30-31",
+      "reg_count": 4
+    },
+    {
+      "function": "read",
+      "reg_address": 28,
+      "reg_width" : 16,
+      "description": "Read 28-29-30-31 16bit",
+      "reg_count": 4
+    },
+    {
+      "function": "read",
+      "reg_address": 7,
+      "description": "28+29",
+      "reg_count": 2,
+      "operation": "x+y"
+    }
+]
+}

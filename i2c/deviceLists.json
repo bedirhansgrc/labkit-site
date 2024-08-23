@@ -1,0 +1,18 @@
+{
+    "32":[
+        {"name":"pac32",
+         "libpath":"libraries/pac32-36.json"},
+        {"name":"pac36",
+         "libpath":"libraries/pac32-36.json"}],
+    "36":[
+        {"name":"pac52",
+         "libpath":"libraries/pac32-36.json"},
+        {"name":"pac56",
+         "libpath":"libraries/pac32-36.json"}],
+    "104":[
+        {"name":"imu6050",
+        "libpath":"libraries/pac104.json"},
+        {"name":"bme280",
+        "libpath":"libraries/pac104.json"}]
+
+}

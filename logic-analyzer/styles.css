@@ -1,0 +1,344 @@
+/* Disabled waveform box */
+.waveform-box.disabled {
+  pointer-events: none;
+}
+
+.waveform-box.disabled .index-label {
+  pointer-events: auto;
+  cursor: text;
+}
+
+/* Selected waveform box with thicker blue border */
+.waveform-box.selected {
+  border: 3px solid blue; /* Thicker blue border for selected boxes */
+  position: relative; /* For positioning the SCL/SDA labels */
+}
+
+/* SCL and SDA labels */
+.waveform-box .label-tag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: bold;
+  color: red;
+  pointer-events: none; /* Ensure the label doesn't interfere with clicks */
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.tab-content {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.tab-content.active {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.waveform-display-container {
+
+  align-items: center;
+  overflow-y: auto;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin-top: 10px;
+  white-space: nowrap;
+}
+
+#waveformDisplayContainer2 {
+  width: 100%;
+}
+
+.container {
+  max-width: 100%;
+  width: 800px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+h1, h2 {
+  font-family: "Roboto Mono", monospace;
+  color: #333;
+}
+
+button {
+  font-family: "Roboto Mono", monospace;
+  background-color: #1212FF;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0000FF;
+}
+
+.emulator-button {
+  justify-content: center;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.waveform-box {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    padding-left: 70px;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: block;
+    width: max-content; 
+    white-space: nowrap;
+    height: 130px;
+    min-width: 1700px;
+  }
+  
+  .waveform-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.index-label {
+  position: absolute;
+  left: 0;
+  top: 40%;
+  padding: 5px;
+  margin-left: 15px;
+  min-width: 20px;
+  max-width: 75px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.hex-box {
+  display: inline-block;
+  width: 156px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 10px;
+  background-color: #f4a261;
+  font-weight: bold;
+  font-family: "Roboto Mono", monospace;
+}
+
+.waveform-label {
+  width: 50px;
+  font-weight: bold;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #949494;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+/* Show the dropdown content on button hover or click */
+.dropdown:hover .dropdown-content,
+.dropdown-content.show {
+  display: block;
+}
+
+/* Option items */
+.option-item {
+  padding: 10px;
+  background-color: #f4a261;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.option-item:hover {
+  background-color: #e76f51;
+}
+
+/* Container to hold dropdown button and instructions */
+.dropdown-instructions-container {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the instructions next to the dropdown */
+#selectionInstructions {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+/* Style for the selected option text */
+#selectedOptionText {
+  font-size: 14px;
+  color: #333;
+  font-weight: bold;
+}
+
+.addresses {
+  border: 1px solid #333;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addresses-container {
+  display: flex;
+  height: 50px;
+  align-items: center;
+  overflow-x: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  padding-left: 120px;
+  background-color: #e9ecef;
+  border-radius: 5px;
+  margin-top: 10px;
+  white-space: nowrap;
+  position: relative;
+}
+
+.addresses-container .line-box {
+  display: inline-block;
+  width: 2px;
+  height: 40px;
+  background-color: grey;
+  margin-right: 1px;
+}
+
+.addresses-container .hex-box {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f4a261;
+  font-weight: 100;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  left: 10px;
+  font-size: 15px;
+  width: 116px;
+}
+
+.start-line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-color: orange;
+  left: 0;
+}
+/* ACK/NACK marker styling */
+.ack-nack-marker,
+.rw-marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+/* Update for uniform spacing */
+.waveform-box .bit {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.addresses-container .data-box {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f4a261;
+  font-weight: 100;
+  border: 2px solid #000;
+  border-radius: 10px;
+  font-family: "Roboto Mono", monospace;
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  left: 10px;
+  font-size: 15px;
+  width: 136px;
+}
+.idle-line {
+  position: absolute;
+  height: 2px;
+  background-color: grey;
+  top: 50%;
+}
+
+.idle-text {
+  position: absolute;
+  font-size: 12px;
+  color: grey;
+  top: 25%;
+}
+.grey-line {
+  position: absolute;
+  height: 2px;
+  background-color: grey;
+  top: 50%;
+  left: 120px;
+}

@@ -1,0 +1,362 @@
+html {
+  font-family: "Roboto Mono", monospace;
+  text-align: center;
+}
+body {
+  margin: 0;
+  padding: 30px;
+  background: #82828287;
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+  border-radius: 10px;
+  background-color: #ffffffb8;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #333;
+  margin-bottom: 20px;
+}
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  text-align: center;
+}
+.input-group input,
+.input-group select {
+  width: calc(33% - 10px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+}
+.buttons {
+  font-family: "Roboto Mono", monospace;
+  display: flex;
+  justify-content: space-between;
+}
+.dumpButton {
+  font-family: "Roboto Mono", monospace;
+}
+.buttons button {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  color: var(--esp-tools-button-text-color, #fff);
+  background-color: var(--esp-tools-button-color, #03a9f4);
+  border: none;
+  border-radius: var(--esp-tools-button-border-radius, 9999px);
+}
+.buttons button:hover {
+  background-color: #49b6f7;
+}
+#deviceList,
+#registerWidth {
+  font-family: "Roboto Mono", monospace;
+}
+.registers {
+  text-align: left;
+  margin-top: 20px;
+}
+.registers .register {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.registers .bits {
+  display: flex;
+  gap: 5px;
+}
+.registers .bits .bit {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #464746bd;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.registers .action-button {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000bffb0;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.action-button:hover {
+  background-color: #000acbb0;
+}
+.registers .action-button.write {
+  background-color: #a60000d6;
+}
+.registers .action-button.write:hover {
+  background-color: #890000d6;
+}
+.registers .register-number {
+  margin-right: 10px;
+  font-weight: bold;
+  min-width: 25px;
+}
+.registers .hex-value {
+  margin-left: 10px;
+  padding: 5px;
+  background-color: #fff;
+  color: black;
+  font-weight: bold;
+  border-radius: 5px;
+}
+#deviceListDiv {
+  margin: 20px;
+}
+.json-container {
+  margin-top: 30px;
+  position: relative;
+  padding: 20px;
+  background-color: #ffffffb8;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+.json-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 5px;
+  background: #82828230;
+}
+.json-button {
+  flex: 1;
+  margin-right: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #03a9f4;
+  color: #fff;
+  text-align: left;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
+}
+.json-button:hover {
+  background-color: #49b6f7;
+}
+.display-box {
+  min-width: 100px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+.json-item input {
+  margin-right: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+}
+#jsonFileInput {
+  margin: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+.jsonFileInput {
+  margin: 10px;
+  font-family: "Roboto Mono", monospace;
+}
+.unit-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: "Roboto Mono", monospace;
+}
+
+.user-input-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#userInput {
+  width: 95%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+  resize: vertical;
+}
+.userInput {
+  width: 95%;
+  height: 100px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+  resize: vertical;
+}
+
+#submitButton {
+  padding: 10px 20px;
+  background-color: #03a9f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
+}
+
+#submitButton:hover {
+  background-color: #0288d1;
+}
+.submitButton {
+  padding: 10px 20px;
+  background-color: #03a9f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Roboto Mono", monospace;
+}
+
+.submitButton:hover {
+  background-color: #0288d1;
+}
+.delete-button:hover {
+color: red;
+}
+
+.scan-section {
+margin: 20px;
+display: flex;
+gap: 10px;
+align-items: center;
+}
+
+.scan-section button,
+.scan-section select {
+padding: 10px;
+font-family: "Roboto Mono", monospace;
+border-radius: 5px;
+border: 1px solid #ccc;
+cursor: pointer;
+}
+
+.scan-section select {
+flex: 1;
+}
+#exportJsonButton {
+padding: 10px 20px;
+background-color: #03a9f4;
+color: white;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-family: "Roboto Mono", monospace;
+}
+
+#exportJsonButton:hover {
+background-color: #0288d1;
+}
+.exportJsonButton {
+padding: 10px 20px;
+background-color: #03a9f4;
+color: white;
+border: none;
+border-radius: 5px;
+margin-left: 10px;
+cursor: pointer;
+font-family: "Roboto Mono", monospace;
+}
+
+.exportJsonButton:hover {
+background-color: #0288d1;
+}
+#addJsonContainerButton {
+padding: 10px 20px;
+background-color: #ECECEC;
+color: black;
+border: 1px solid #000;
+border-radius: 10px;
+cursor: pointer;
+font-family: "Roboto Mono", monospace;
+}
+#addJsonContainerButton:hover {
+background-color: #D9D9D9;
+
+transition: 0.3s;
+}
+.add-container-button {
+padding: 10px 20px;
+background-color: #ECECEC;
+color: black;
+border: none;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+border-radius: 5px;
+cursor: pointer;
+font-family: "Roboto Mono", monospace;
+font-size: 24px;
+width: 50px;
+height: 50px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.add-container-button:hover {
+background-color: #D9D9D9;
+transition: 0.3s;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.close-button:hover {
+  color: red;
+}
+.helpIcon {
+  position: relative;
+  z-index: 10; 
+}

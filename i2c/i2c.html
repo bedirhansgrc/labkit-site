@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ESP Web Server</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="/public/favicon.ico" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="data:," />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>I2C</h1>
+      <div class="input-group">
+        <div>
+          <label for="deviceAddress">Device Address</label>
+          <input type="text" id="deviceAddress" />
+        </div>
+        <div>
+          <label for="registerAddress">Register Address</label>
+          <input type="text" id="registerAddress" />
+        </div>
+        <div>
+          <label for="registerValue">Register Value</label>
+          <input type="text" id="registerValue" />
+        </div>
+      </div>
+      <div class="buttons">
+        <button onclick="writeI2C()">Write</button>
+        <button onclick="readI2C()">Read</button>
+        <button id="scanButton" onclick="scanI2C()">Scan</button>
+      </div>
+      <div id="deviceListDiv">
+        <label for="deviceDropdown">Device List</label>
+        <select id="deviceDropdown">
+          <option value="">Select Device</option>
+        </select>
+        <label for="registerWidth">Register Width</label>
+        <select id="registerWidth">
+          <option value="1">8 bits</option>
+          <option value="2">16 bits</option>
+        </select>
+        <button class="dumpButton" onclick="dumpRegisters()">
+          Dump Registers
+        </button>
+        <button id="addJsonContainerButton">+</button>
+      </div>
+      <div class="registers" id="registers"></div>
+    </div>
+    <div
+      style="
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+      "
+      id="device_controls">
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waveform Display</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="logic-analyzer" class="tab-content active">
+        <div id="waveformDisplayContainer2" class="container">
+            <h2>Waveform Display</h2>
+            
+            <!-- Dropdown Button -->
+            <div class="dropdown-instructions-container">
+                <div class="dropdown">
+                    <button id="dropdownButton" class="emulator-button">+</button>
+                    <div id="dropdownContent" class="dropdown-content">
+                        <div class="option-item" id="i2cDebuggerOption">I2C Debugger</div>
+                    </div>
+                </div>
+                <span id="selectedOptionText" style="margin-left: 10px; font-size: 14px;"></span>
+            </div>
+            <p id="selectionInstructions" style="display:none; color: red; margin: 0px;">Please select two waveform boxes: first for SCL, then for SDA.</p>
+
+            <!-- Select Button (Initially Hidden) -->
+            <button id="selectWaveformButton" class="emulator-button" style="display:none;">Select</button>
+
+            <div id="waveformDisplayContainer" class="waveform-display-container">
+                <!-- Waveform Boxes -->
+                <div class="waveform-box" socketid="0">
+                    <div class="index-label">0</div>
+                </div>
+                <div class="waveform-box" socketid="1">
+                    <div class="index-label">1</div>
+                </div>
+                <div class="waveform-box" socketid="2">
+                    <div class="index-label">2</div>
+                </div>
+                <div class="waveform-box" socketid="3">
+                    <div class="index-label">3</div>
+                </div>
+                <div class="waveform-box" socketid="4">
+                    <div class="index-label">4</div>
+                </div>
+                <div class="waveform-box" socketid="5">
+                    <div class="index-label">5</div>
+                </div>
+                <div class="waveform-box" socketid="6">
+                    <div class="index-label">6</div>
+                </div>
+                <div class="waveform-box" socketid="7">
+                    <div class="index-label">7</div>
+                </div>
+            </div>
+            
+            <div class="button-container">
+                <button id="startEmulatorButton" class="emulator-button">Start Emulator</button>
+                <button id="stopEmulatorButton" class="emulator-button">Stop Emulator</button>
+                <button id="sendEmulatorMessagesButton" class="emulator-button">Send Emulator Messages</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
