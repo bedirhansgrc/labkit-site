@@ -1,7 +1,8 @@
 body {
     font-family: 'Roboto Mono', monospace;
-    background-color: #f4f4f4;
+    background-color: #A39D9D;
     margin: 0;
+    color: #C2C2C2;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +51,7 @@ body {
     font-weight: bold;
     color: #fff;
     text-align: center;
-    background: linear-gradient(90deg, #0000ff, #1a1aff);
+    background: linear-gradient(90deg, #00dba0, #00b58a);
     border: none;
     border-radius: 5px;
     text-decoration: none;
@@ -81,13 +82,13 @@ body {
     align-items: center;
     width: 100%;
     padding: 15px 30px;
-    background-color: #fff;
-    border-bottom: 1px solid #e0e0e0;
+    background-color: #8e8989;
+    
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
     box-sizing: border-box; 
     height: 60px; 
     overflow: visible; 
@@ -96,7 +97,7 @@ body {
 .navbar-logo a {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -105,7 +106,7 @@ body {
     font-size: 1rem;
     font-weight: bold;
     color: #fff;
-    background-color: #1a1aff;
+    background-color: #00b58a;
     border-radius: 5px;
     text-decoration: none;
     transition: background-color 0.3s;
@@ -113,7 +114,7 @@ body {
 }
 
 .navbar-button .button:hover {
-    background-color: #0000ff;
+    background-color: #00a582;
 }
 .app-container {
     display: grid;
@@ -134,7 +135,7 @@ body {
     width: 150px;
     height: 150px;
     text-align: center;
-    background-color: #fff;
+    background-color: #00b58a;
     color: #333;
     text-decoration: none;
     border: 2px solid #333;
@@ -149,8 +150,7 @@ body {
 }
 
 .app-link:hover {
-    background-color: #1a1aff;
-    color: #fff;
+    background-color: #00dba0;
 }
 .flash-tool-container {
     display: flex;
@@ -167,7 +167,7 @@ body {
     width: 200px;
     height: 80px;
     text-align: center;
-    background-color: #fff;
+    background-color: #00b58a;
     color: #333;
     text-decoration: none;
     border: 2px solid #333;
@@ -184,8 +184,7 @@ body {
 }
 
 .flash-link:hover {
-    background-color: #1a1aff;
-    color: #fff;
+    background-color: #00dba0;
 }
 
 .slideshow-container {
@@ -201,7 +200,7 @@ body {
     width: 100%;
     height: 100%;
     padding: 40px;
-    background-color: #fff;
+    background-color: #615F5F;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
@@ -255,7 +254,7 @@ body {
 }
 
 .active, .dot:hover {
-    background-color: #717171;
+    background-color: #00a582;
 }
 .mySlide {
     display: none;
